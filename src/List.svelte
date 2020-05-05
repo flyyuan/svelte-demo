@@ -100,4 +100,53 @@
     /*自动继承父元素的背景*/
     transform: rotate(45deg);
 }
+
+
+.message3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    float: right;
+    width: 15%;
+    height: 28px;
+    margin: 10px 30px;
+    background-color: #9EEA6A;
+    border-bottom-color: #9EEA6A;
+    /*为了给after伪元素自动继承*/
+    color: #9EEA6A;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 5px 12px 5px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    position: relative;
+    word-break: break-all;
+}
+
+
+/** 通过对小正方形旋转45度解决 **/
+.message3::before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    margin-top: -10px;
+    background: inherit;
+    /*自动继承父元素的背景*/
+    transform: rotate(45deg);
+}
+
+.message3::after {
+    position: absolute;
+    content: ' ';
+    text-align: center;
+    left: 10px;
+    width: 16px;
+    height: 23px;
+    background-image: url('./wave.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
 </style>

@@ -1,6 +1,7 @@
 <script>
   export let getValue;
-  let text = '';
+  export let changeInput;
+  let text = "";
 </script>
 
 <style>
@@ -39,9 +40,20 @@
     overflow: hidden;
     line-height: 4vh;
   }
+  img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+  }
 </style>
 
 <div class="input">
+  <img
+    on:click={() => {
+      changeInput(1);
+    }}
+    alt="keyboard"
+    src="./build/voice.png" />
   <input bind:value={text} />
   <span
     on:click={() => {
