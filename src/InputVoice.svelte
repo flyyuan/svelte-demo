@@ -22,7 +22,6 @@
     recognition.onresult = event => {
       if (typeof event.results !== "undefined") {
         result = event.results[0][0].transcript;
-        console.log(result);
       }
     };
   });
@@ -33,7 +32,6 @@
 
   var touchendHander = event => {
     recognition.stop();
-    console.log("result", result);
     getVoiceValue(result);
   };
 
